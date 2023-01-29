@@ -12,11 +12,10 @@ class Shape {
 }
 
 class Square extends Shape{
+    static name = 'square';
+    static sides = 4;
     constructor(sideLength){
-        super()
-        this.name = "square";
-        this.sides = 4;
-        this.sideLength = sideLength;
+        super(sideLength) ;
     }
 }    
 
