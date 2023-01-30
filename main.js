@@ -62,15 +62,15 @@ class Account{
 // 1)
 class Person{
     constructor(name){
-        this.name = name;
+        this._name = name;
     }
     get name(){
-        return this.name.toUpperCase();
+        return (this._name.toUpperCase());
     }
 }
 
-let yuval = new Person("yuval");
-console.log(yuval.getName());
+let Yuval = new Person("yuval");
+console.log(Yuval.name);
 
 // 2)
 
@@ -127,13 +127,13 @@ class BankAccount{
         this._accountBalance = accountBalance;
     }
     deposit(amount){
-        return this.accountBalance += amount;
+        return this._accountBalance += amount;
     }
     withdraw(amount){
-        return this.accountBalance -= amount;
+        return this._accountBalance -= amount;
     }
     checkBalance(){
-        return this.accountBalance;
+        return this._accountBalance;
     }
 }
 
