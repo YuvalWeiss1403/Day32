@@ -76,14 +76,20 @@ console.log(Yuval.name);
 
 class Product {
     constructor(name, price){
-        this.name = name;
-        this.price = price;
+        this._name = name;
+        this._price = price;
     }
     set price(price2){
-        this.price = Math.round(price2);
+        this._price = Math.round(price2);
+    }
+    get price(){
+        return this._price;
     }
 }
 
+let coke = new Product("coke",12);
+coke.price = 13.4566;
+console.log(coke.price);
 // Ex4
 
 class circle2 {
