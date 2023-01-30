@@ -64,7 +64,7 @@ class Person{
     constructor(name){
         this.name = name;
     }
-    getName(){
+    get name(){
         return this.name.toUpperCase();
     }
 }
@@ -79,21 +79,52 @@ class Product {
         this.name = name;
         this.price = price;
     }
-    setPrice(){
-        this.price = Math.round(this.price);
+    set price(price2){
+        this.price = Math.round(price2);
     }
 }
 
 // Ex4
+
+class circle2 {
+    constructor(radius){
+        this._radius = radius;
+    }
+    get diameter(){
+        return 2*this._radius;
+    }
+
+    set diameter(diameter){
+        this._radius = diameter/2;
+    }
+}
 // Ex5
+
+class Person2 {
+    constructor(firstName,lastName,age){
+        this._firstName = firstName;
+        this._lastName = lastName;
+        this._age = age;
+    }
+    displayInfo(){
+        return (`${this._firstName} ${this._lastName} (${this._age}) years old`)
+    }
+    set _age(age){
+        if(age>0){
+            this._age=age
+        }else{
+            console.log("age is set to a negative number")
+        }
+    }
+}
 
 // EX6
 
 class BankAccount{
     constructor(accountNumber ,accountHolder ,accountBalance ){
-        this.accountNumber = accountNumber;
-        this.accountHolder = accountHolder;
-        this.accountBalance = accountBalance;
+        this._accountNumber = accountNumber;
+        this._accountHolder = accountHolder;
+        this._accountBalance = accountBalance;
     }
     deposit(amount){
         return this.accountBalance += amount;
